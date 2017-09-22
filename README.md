@@ -1,4 +1,4 @@
-# SEPTEMBER
+# Learn HTTP in Angular
 
 ## 1. Let's use string interpolation 🤓
 
