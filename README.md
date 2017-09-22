@@ -13,9 +13,9 @@
 
 ## 3. Let's use string interpolation, import HTTP and fetch a information 🔥
 
-1. So we are almost there! Last thing we want to do is create a channel (AKA Observable): `http.get('http://api.icndb.com/jokes/random');`
-2. Second we will subscribe to it, so we can get a new joke `http.get('http://api.icndb.com/jokes/random').subscribe();`
-3. Finally, we want to `log` the information in the `console` with: `http.get('http://api.icndb.com/jokes/random').subscribe((response) => { console.log(response);});`
+1. So we are almost there! Last thing we want to do is create a channel (AKA Observable): `http.get('https://api.icndb.com/jokes/random');`
+2. Second we will subscribe to it, so we can get a new joke `http.get('https://api.icndb.com/jokes/random').subscribe();`
+3. Finally, we want to `log` the information in the `console` with: `http.get('https://api.icndb.com/jokes/random').subscribe((response) => { console.log(response);});`
 
 ## 4. Let's use string interpolation, import HTTP, fetch a information and show a Joke ⭐️
 
