@@ -1,28 +1,22 @@
 # SEPTEMBER
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+## 1. Let's use string interpolation 🤓
 
-## Development server
+1. Create a `joke` variable in `app.component.ts` and assign this random joke: `Ghosts are actually caused by Chuck Norris killing people faster than Death can process them.`
+1. Now go to `app.component.html` and replace its content with: `<h1>{{joke}}</h1>`. Now go and check the browser! 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 2. Let's use string interpolation and import HTTP 🔌
 
-## Code scaffolding
+1. Now it's time to start using HTTP requests! Go to `app.module.ts` and import the `HttpModule` from `import { HttpModule } from '@angular/http';`.
+2. Actually, to start using it we need to put it in the `imports` array: `imports: [BrowserModule, HttpModule],`
+3. And the final step is to **inject it** in our component. Go to `app.component.ts` and create a `constructor` like this one: `constructor(private http: Http) { }`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 3. Let's use string interpolation, import HTTP and fetch a information 🔥
 
-## Build
+1. So we are almost there! Last thing we want to do is create a channel (AKA Observable): `http.get('http://api.icndb.com/jokes/random');`
+2. Second we will subscribe to it, so we can get a new joke `http.get('http://api.icndb.com/jokes/random').subscribe();`
+3. Finally, we want to `log` the information in the `console` with: `http.get('http://api.icndb.com/jokes/random').subscribe((response) => { console.log(response);});`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## 4. Let's use string interpolation, import HTTP, fetch a information and show a Joke ⭐️
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. This is it, we only need to format the information correctly, replace `console.log(response)` with `this.joke = response.json().value.joke;`
