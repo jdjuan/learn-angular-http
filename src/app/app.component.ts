@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http, Response } from "@angular/http";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private http: Http) {
     http.get('http://api.icndb.com/jokes/random')
-      .subscribe(response => {
+      .subscribe((response: Response) => {
         this.joke = response.json().value.joke;
       });
   }
