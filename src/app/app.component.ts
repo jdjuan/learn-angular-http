@@ -7,7 +7,7 @@ import { Http, Response } from "@angular/http";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  joke = 'It is better to give than to receive. This is especially true of a Chuck Norris roundhouse kick';
+  joke = '';
 
   constructor(private http: Http) {
     http.get('https://api.icndb.com/jokes/random')
