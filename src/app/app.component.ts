@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private http: Http) {}
   
   ngOnInit(){
-    Observable.timer(0, 2000)
+    Observable.timer(0, 6000)
     .switchMap(() =>  this.http.get('https://api.icndb.com/jokes/random'))
     .subscribe((response: Response) => {
       this.joke = response.json().value.joke;
